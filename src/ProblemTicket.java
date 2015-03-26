@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by Lope on 3/24/2015.
  */
-public class ProblemTicket  {
+public class ProblemTicket extends TicketManager {
 
     //problem ticket class needs to hold the issue , name of th person recorded it, date resolved , and date issued, as
     // well as severity of the ticket
@@ -43,10 +43,10 @@ public class ProblemTicket  {
         this.dateEntered = dateEntered;
         this.dateResolved = dateResolved;
     }
-
+// needs to be able to communicate with the ticket manager in order to get the info in textboxes. ?
 
     public String getWorkerName() {
-//       workerName = userName.getText
+
         return workerName;
     }
 
@@ -63,10 +63,13 @@ public class ProblemTicket  {
     }
 
     // store the problem tickets in an array List and also in a JList
+//    public static ProblemTicket AddToBothLists() {
+
+
         ArrayList<ProblemTicket> problemTickets = new ArrayList<ProblemTicket>();
-    }
 
 // get the necessary components to get the build the ticket item to add it to the list
 
 // should recieve a username, description of the problem, severity level , and a date entered to be able to add it to the list
         // once it meets these requirements add that problem ticket to the list.
+    }
