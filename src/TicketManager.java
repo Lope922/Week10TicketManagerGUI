@@ -1,7 +1,8 @@
 import javax.activity.InvalidActivityException;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.event.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -23,6 +24,7 @@ public class TicketManager extends JFrame {
     private JList list1; // list used to store information
     private JButton addTicketButton; // button to add items to list
     private JTextField dateTextFieldEntered; // user input box for date problem was recorded.
+    private JButton resolveTicketButton;
 
     private JSpinner spinner1; // not used anymore. was going to use for calandar date picker.
     //  private JSpinner spinner2;
@@ -103,6 +105,22 @@ public class TicketManager extends JFrame {
 
         });
 
+
+        resolveTicketButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // get the selected index of the listbox and remove it from the list.
+               int index = list1.getSelectedIndex(); // initialize a number and set it to the object to remove from the list.
+                if(index >= 0 ){
+                    problemTicketDefaultListModel.remove(index); // code from stackoverflow
+                    //todo create a 2nd list to store resolved tickets.
+                }
+
+
+                //create a second list of solved tickets and add it to that. with the date resolved and description of
+//solution.
+            }
+        });
 
     }
 }
